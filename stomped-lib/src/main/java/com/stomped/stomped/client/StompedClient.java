@@ -8,8 +8,6 @@ import com.stomped.stomped.component.StompedHeaders;
 import com.stomped.stomped.connection.WebSocketConnector;
 import com.stomped.stomped.listener.StompedListener;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -72,12 +70,12 @@ public class StompedClient {
         Log.d(TAG, "Client sending to " + destination);
     }
 
-    public void subscribeAndSend(String destination, String subscription, @NotNull StompedListener listener){
+    public void subscribeAndSend(String destination, String subscription, StompedListener listener){
         subscribe(subscription, listener);
         send(destination);
     }
 
-    public void subscribe(String destination, @NotNull StompedListener listener){
+    public void subscribe(String destination, StompedListener listener){
 
         String destinationID = String.valueOf(incrementDestinationID());
 

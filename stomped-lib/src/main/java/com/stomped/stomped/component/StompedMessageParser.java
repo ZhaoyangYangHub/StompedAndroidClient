@@ -18,7 +18,7 @@ public class StompedMessageParser {
         command = splitMessage[0];
 
         for(int i = currentPosition; i < splitMessage.length; i++) {
-            if (splitMessage[i].equals("")) {
+            if (splitMessage[i].isEmpty()) {
                 currentPosition = i;
                 break;
             } else {
